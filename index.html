@@ -1,37 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adam Fąfrowicz</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       font-family: sans-serif;
       background-color: #fff;
     }
+
     .page-header {
       font-family: 'Playfair Display', serif;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 2rem;
-      font-size: 2.5rem;
       background-color: #f8f8f8;
       color: #222;
       border-bottom: 1px solid #ddd;
     }
+
+    .page-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+
     .contact-link {
       font-family: sans-serif;
       font-size: 1rem;
       text-decoration: none;
       color: #444;
     }
+
     .contact-link:hover {
       text-decoration: underline;
     }
+
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -40,6 +50,7 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .video-thumbnail {
       position: relative;
       cursor: pointer;
@@ -51,96 +62,112 @@
       border: 1px solid #ccc;
       overflow: hidden;
     }
+
     .video-thumbnail img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transform: scale(1.01);
     }
+
     .video-popup {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0,0,0,0.8);
+      inset: 0;
+      background-color: rgba(0,0,0,0.85);
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
-    .video-popup iframe {
-      width: 90vw;
-      max-width: 800px;
-      height: 45vw;
-      max-height: 450px;
-    }
+
     .video-popup.active {
       display: flex;
     }
+
+    .video-popup iframe {
+      width: 90vw;
+      max-width: 900px;
+      height: 50vw;
+      max-height: 506px;
+      background: #000;
+    }
+
     .close-btn {
       position: absolute;
       top: 2rem;
       right: 2rem;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      line-height: 1;
       color: white;
       cursor: pointer;
+      z-index: 1001;
     }
+
     @media (max-width: 600px) {
       .page-header {
-        font-size: 2rem;
         padding: 1.5rem;
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
       }
-      .contact-link {
-        margin-top: 0.5rem;
+
+      .page-header h1 {
+        font-size: 2rem;
       }
+
       .video-grid {
         grid-template-columns: 1fr;
+        padding: 2rem 1rem;
       }
     }
   </style>
 </head>
+
 <body>
   <header class="page-header">
     <h1>Adam Fąfrowicz</h1>
-    <a href="mailto:afafrowicz@wp.pl" class="contact-link">
-  afafrowicz@wp.pl
-</a>
+    <a href="mailto:afafrowicz@wp.pl" class="contact-link">afafrowicz@wp.pl</a>
   </header>
 
   <main>
     <section class="video-grid">
-      <div class="video-thumbnail" data-video="https://www.youtube.com/embed/_NFy89OH4x4">
-  <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg" alt="Film 7">
-</div>
 
-<div class="video-thumbnail" data-video="https://www.youtube.com/embed/wWE1F8PltxY">
-  <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg" alt="Film 8">
-</div>
-
-<div class="video-thumbnail" data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
-  <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg" alt="Shorts 1">
-</div>
       <div class="video-thumbnail" data-video="https://www.youtube.com/embed/B914tq8r1vQ">
         <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg" alt="Film 1">
       </div>
+
       <div class="video-thumbnail" data-video="https://www.youtube.com/embed/CwuLPZukaMA">
         <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg" alt="Film 2">
       </div>
+
       <div class="video-thumbnail" data-video="https://drive.google.com/file/d/1GLO4df5TQRnP9c8uk8lC1oR_xeuN9VYu/preview">
         <img src="./cineman.jpg" alt="Film z Google Drive">
       </div>
+
       <div class="video-thumbnail" data-video="https://www.youtube.com/embed/tc4DutQusgc">
         <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg" alt="Film 4">
       </div>
+
       <div class="video-thumbnail" data-video="https://www.youtube.com/embed/hWYAkXBqaEE">
         <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg" alt="Film 5">
       </div>
+
       <div class="video-thumbnail" data-video="https://www.youtube.com/embed/TxVCHo4UJmM">
         <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg" alt="Film 6">
       </div>
+
+      <div class="video-thumbnail" data-video="https://www.youtube.com/embed/_NFy89OH4x4">
+        <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg" alt="Film 7">
+      </div>
+
+      <div class="video-thumbnail" data-video="https://www.youtube.com/embed/wWE1F8PltxY">
+        <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg" alt="Film 8">
+      </div>
+
+      <div class="video-thumbnail" data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
+        <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg" alt="Shorts">
+      </div>
+
     </section>
   </main>
 
@@ -156,7 +183,12 @@
 
     thumbnails.forEach(thumb => {
       thumb.addEventListener('click', () => {
-        const videoUrl = thumb.getAttribute('data-video');
+        let videoUrl = thumb.getAttribute('data-video');
+
+        if (videoUrl.includes('youtube.com/embed')) {
+          videoUrl += '?autoplay=1';
+        }
+
         iframe.src = videoUrl;
         popup.classList.add('active');
       });
@@ -166,6 +198,18 @@
       iframe.src = '';
       popup.classList.remove('active');
     }
+
+    popup.addEventListener('click', (event) => {
+      if (event.target === popup) {
+        closePopup();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closePopup();
+      }
+    });
   </script>
 </body>
 </html>
