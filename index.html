@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+
     body {
       margin: 0;
       font-family: sans-serif;
@@ -62,6 +63,7 @@
       aspect-ratio: 16 / 9;
       border: 1px solid #ccc;
       overflow: hidden;
+      display: block;
     }
 
     .video-thumbnail img {
@@ -80,7 +82,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0, 0, 0, 0.85);
       justify-content: center;
       align-items: center;
       z-index: 1000;
@@ -97,16 +99,6 @@
       max-height: 506px;
       background: black;
       border: 0;
-    }
-
-    /* Instagram / Reel */
-
-    .video-popup.instagram iframe {
-      width: 440px;
-      max-width: 90vw;
-      height: 85vh;
-      max-height: 800px;
-      background: white;
     }
 
     .close-btn {
@@ -137,11 +129,6 @@
         padding: 2rem 1rem;
       }
 
-      .video-popup.instagram iframe {
-        width: 94vw;
-        height: 85vh;
-      }
-
     }
 
   </style>
@@ -155,30 +142,28 @@
 
   <a href="mailto:afafrowicz@wp.pl"
      class="contact-link">
-     afafrowicz@wp.pl
+    afafrowicz@wp.pl
   </a>
 
 </header>
-
 
 <main>
 
 <section class="video-grid">
 
+  <!-- Instagram -->
 
-  <!-- INSTAGRAM REEL -->
+  <a class="video-thumbnail"
+     href="https://www.instagram.com/muuvapparel/reel/DQHazj-iuHZ/?hl=en"
+     target="_blank"
+     rel="noopener noreferrer">
 
-  <div class="video-thumbnail"
-       data-video="https://www.instagram.com/reel/DQHazj-iuHZ/embed/"
-       data-type="instagram">
-
-    <img src="./muuv_insta.png"
+    <img src="./MUUV%20INSTA.png"
          alt="MUUV Apparel">
 
-  </div>
+  </a>
 
-
-  <!-- YOUTUBE -->
+  <!-- YouTube -->
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/B914tq8r1vQ">
@@ -187,7 +172,6 @@
 
   </div>
 
-
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/CwuLPZukaMA">
 
@@ -195,8 +179,7 @@
 
   </div>
 
-
-  <!-- GOOGLE DRIVE -->
+  <!-- Google Drive -->
 
   <div class="video-thumbnail"
        data-video="https://drive.google.com/file/d/1GLO4df5TQRnP9c8uk8lC1oR_xeuN9VYu/preview">
@@ -205,16 +188,12 @@
 
   </div>
 
-
-  <!-- YOUTUBE -->
-
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/tc4DutQusgc">
 
     <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg">
 
   </div>
-
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/hWYAkXBqaEE">
@@ -223,14 +202,12 @@
 
   </div>
 
-
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/TxVCHo4UJmM">
 
     <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg">
 
   </div>
-
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/_NFy89OH4x4">
@@ -239,14 +216,12 @@
 
   </div>
 
-
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/wWE1F8PltxY">
 
     <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg">
 
   </div>
-
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
@@ -255,29 +230,23 @@
 
   </div>
 
-
 </section>
 
 </main>
-
-
-<!-- POPUP -->
 
 <div class="video-popup" id="videoPopup">
 
   <div class="close-btn"
        onclick="closePopup()">
-       ×
+    ×
   </div>
 
   <iframe id="popupIframe"
           src=""
-          allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen>
   </iframe>
 
 </div>
-
 
 <script>
 
@@ -296,7 +265,6 @@ document.getElementById(
   'popupIframe'
 );
 
-
 thumbnails.forEach(
   thumb => {
 
@@ -309,40 +277,16 @@ thumbnails.forEach(
           'data-video'
         );
 
-        const videoType =
-        thumb.getAttribute(
-          'data-type'
-        );
-
-
-        /* YOUTUBE AUTOPLAY */
-
-        if(
+        if (
           videoUrl.includes(
             'youtube.com/embed'
           )
-        ){
+        ) {
+
           videoUrl +=
           '?autoplay=1';
+
         }
-
-
-        /* INSTAGRAM */
-
-        if(
-          videoType ===
-          'instagram'
-        ){
-          popup.classList.add(
-            'instagram'
-          );
-        }
-        else{
-          popup.classList.remove(
-            'instagram'
-          );
-        }
-
 
         iframe.src =
         videoUrl;
@@ -357,8 +301,7 @@ thumbnails.forEach(
   }
 );
 
-
-function closePopup(){
+function closePopup() {
 
   iframe.src = '';
 
@@ -366,42 +309,39 @@ function closePopup(){
     'active'
   );
 
-  popup.classList.remove(
-    'instagram'
-  );
-
 }
-
 
 popup.addEventListener(
   'click',
   (e) => {
 
-    if(
+    if (
       e.target === popup
-    ){
+    ) {
+
       closePopup();
+
     }
 
   }
 );
 
-
 document.addEventListener(
   'keydown',
   (e) => {
 
-    if(
+    if (
       e.key === 'Escape'
-    ){
+    ) {
+
       closePopup();
+
     }
 
   }
 );
 
 </script>
-
 
 </body>
 </html>
