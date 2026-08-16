@@ -78,6 +78,23 @@
       transform: scale(1.05);
     }
 
+    /* INSTAGRAM */
+
+    .instagram-thumbnail {
+      background: #fff;
+    }
+
+    .instagram-thumbnail img {
+      object-fit: contain;
+      transform: none;
+    }
+
+    .instagram-thumbnail:hover img {
+      transform: scale(1.02);
+    }
+
+    /* POPUP VIDEO */
+
     .video-popup {
       display: none;
       position: fixed;
@@ -151,9 +168,10 @@
 
 <section class="video-grid">
 
-  <!-- Instagram -->
 
-  <a class="video-thumbnail"
+  <!-- INSTAGRAM -->
+
+  <a class="video-thumbnail instagram-thumbnail"
      href="https://www.instagram.com/muuvapparel/reel/DQHazj-iuHZ/?hl=en"
      target="_blank"
      rel="noopener noreferrer">
@@ -163,76 +181,100 @@
 
   </a>
 
-  <!-- YouTube -->
+
+  <!-- YOUTUBE -->
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/B914tq8r1vQ">
 
-    <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/CwuLPZukaMA">
 
-    <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg"
+         alt="Video">
 
   </div>
 
-  <!-- Google Drive -->
+
+  <!-- GOOGLE DRIVE -->
 
   <div class="video-thumbnail"
        data-video="https://drive.google.com/file/d/1GLO4df5TQRnP9c8uk8lC1oR_xeuN9VYu/preview">
 
-    <img src="./cineman.jpg">
+    <img src="./cineman.jpg"
+         alt="Cineman">
 
   </div>
+
+
+  <!-- YOUTUBE -->
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/tc4DutQusgc">
 
-    <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/hWYAkXBqaEE">
 
-    <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/TxVCHo4UJmM">
 
-    <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/_NFy89OH4x4">
 
-    <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/wWE1F8PltxY">
 
-    <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
   <div class="video-thumbnail"
        data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
 
-    <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg">
+    <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg"
+         alt="Video">
 
   </div>
+
 
 </section>
 
 </main>
+
+
+<!-- POPUP -->
 
 <div class="video-popup" id="videoPopup">
 
@@ -243,10 +285,12 @@
 
   <iframe id="popupIframe"
           src=""
+          allow="autoplay; encrypted-media; picture-in-picture"
           allowfullscreen>
   </iframe>
 
 </div>
+
 
 <script>
 
@@ -264,6 +308,7 @@ const iframe =
 document.getElementById(
   'popupIframe'
 );
+
 
 thumbnails.forEach(
   thumb => {
@@ -301,6 +346,7 @@ thumbnails.forEach(
   }
 );
 
+
 function closePopup() {
 
   iframe.src = '';
@@ -310,6 +356,7 @@ function closePopup() {
   );
 
 }
+
 
 popup.addEventListener(
   'click',
@@ -325,6 +372,7 @@ popup.addEventListener(
 
   }
 );
+
 
 document.addEventListener(
   'keydown',
