@@ -64,7 +64,7 @@ body {
     position: relative;
     cursor: pointer;
     background: #eee;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     display: block;
 }
@@ -104,24 +104,31 @@ body {
 /* PODPISY */
 
 .video-caption {
-    margin-top: 0.75rem;
-
-    font-family: "Playfair Display", serif;
-    font-size: 0.95rem;
-
-    color: #222;
-
+    margin-top: 0.55rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
     white-space: nowrap;
+    font-family: "Playfair Display", serif;
+    color: #222;
 }
 
 .video-caption .title {
+    font-size: 1rem;
+    font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.video-caption .separator {
+    font-size: 0.9rem;
+    color: #999;
 }
 
 .video-caption .description {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 400;
     color: #777;
-
     text-transform: none;
 }
 
@@ -179,6 +186,11 @@ body {
         gap: 2.5rem;
     }
 
+    .video-caption {
+        white-space: normal;
+        flex-wrap: wrap;
+    }
+
 }
 
 </style>
@@ -216,12 +228,10 @@ body {
 
         </a>
 
-        <div class="video-title">
-            MUUV
-        </div>
-
-        <div class="video-description">
-            reel
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -234,16 +244,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/B914tq8r1vQ">
 
-            <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -256,16 +265,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/CwuLPZukaMA">
 
-            <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -278,16 +286,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://drive.google.com/file/d/1GLO4df5TQRnP9c8uk8lC1oR_xeuN9VYu/preview">
 
-            <img src="./cineman.jpg">
+            <img src="./cineman.jpg"
+                 alt="Cineman">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -300,16 +307,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/tc4DutQusgc">
 
-            <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -322,16 +328,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/hWYAkXBqaEE">
 
-            <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -344,16 +349,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/TxVCHo4UJmM">
 
-            <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -366,16 +370,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/_NFy89OH4x4">
 
-            <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -388,16 +391,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/wWE1F8PltxY">
 
-            <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
@@ -410,16 +412,15 @@ body {
         <div class="video-thumbnail"
              data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
 
-            <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg">
+            <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg"
+                 alt="Video">
 
         </div>
 
-        <div class="video-title">
-            TYTUŁ
-        </div>
-
-        <div class="video-description">
-            OPIS
+        <div class="video-caption">
+            <span class="title">TYTUŁ</span>
+            <span class="separator">|</span>
+            <span class="description">opis</span>
         </div>
 
     </div>
