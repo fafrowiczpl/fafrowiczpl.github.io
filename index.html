@@ -49,10 +49,15 @@ body {
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem 2rem;
     padding: 4rem 2rem;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.video-card {
+    display: flex;
+    flex-direction: column;
 }
 
 .video-thumbnail {
@@ -60,7 +65,6 @@ body {
     cursor: pointer;
     background: #eee;
     aspect-ratio: 16/9;
-    border: 1px solid #ccc;
     overflow: hidden;
     display: block;
 }
@@ -95,6 +99,24 @@ body {
 
 .instagram-thumbnail:hover img {
     transform: none;
+}
+
+/* PODPISY */
+
+.video-title {
+    margin-top: 0.75rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #222;
+}
+
+.video-description {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #888;
 }
 
 /* POPUP */
@@ -148,6 +170,7 @@ body {
     .video-grid {
         grid-template-columns: 1fr;
         padding: 2rem 1rem;
+        gap: 2.5rem;
     }
 
 }
@@ -172,88 +195,234 @@ body {
 
 <section class="video-grid">
 
+
     <!-- INSTAGRAM -->
 
-    <a class="video-thumbnail instagram-thumbnail"
-       href="https://www.instagram.com/muuvapparel/reel/DQHazj-iuHZ/?hl=en"
-       target="_blank"
-       rel="noopener noreferrer">
+    <div class="video-card">
 
-        <img src="./muuv_insta.png"
-             alt="MUUV Apparel">
+        <a class="video-thumbnail instagram-thumbnail"
+           href="https://www.instagram.com/muuvapparel/reel/DQHazj-iuHZ/?hl=en"
+           target="_blank"
+           rel="noopener noreferrer">
 
-    </a>
+            <img src="./muuv_insta.png"
+                 alt="MUUV Apparel">
 
-    <!-- YOUTUBE -->
+        </a>
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/B914tq8r1vQ">
+        <div class="video-title">
+            TYTUŁ
+        </div>
 
-        <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg">
+        <div class="video-description">
+            OPIS
+        </div>
+
+    </div>
+
+
+    <!-- YOUTUBE 1 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/B914tq8r1vQ">
+
+            <img src="https://img.youtube.com/vi/B914tq8r1vQ/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/CwuLPZukaMA">
 
-        <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg">
+    <!-- YOUTUBE 2 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/CwuLPZukaMA">
+
+            <img src="https://img.youtube.com/vi/CwuLPZukaMA/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
+
 
     <!-- GOOGLE DRIVE -->
 
-    <div class="video-thumbnail"
-         data-video="https://drive.google.com/file/d/1GLO4df5TQRnP9c8uk8lC1oR_xeuN9VYu/preview">
+    <div class="video-card">
 
-        <img src="./cineman.jpg">
+        <div class="video-thumbnail"
+             data-video="https://drive.google.com/file/d/1GLO4df5TQRnP9c8uk8lC1oR_xeuN9VYu/preview">
 
-    </div>
+            <img src="./cineman.jpg">
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/tc4DutQusgc">
+        </div>
 
-        <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg">
+        <div class="video-title">
+            TYTUŁ
+        </div>
 
-    </div>
-
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/hWYAkXBqaEE">
-
-        <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg">
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/TxVCHo4UJmM">
 
-        <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg">
+    <!-- YOUTUBE 3 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/tc4DutQusgc">
+
+            <img src="https://img.youtube.com/vi/tc4DutQusgc/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
+
+    </div>
+
+
+    <!-- YOUTUBE 4 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/hWYAkXBqaEE">
+
+            <img src="https://img.youtube.com/vi/hWYAkXBqaEE/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/_NFy89OH4x4">
 
-        <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg">
+    <!-- YOUTUBE 5 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/TxVCHo4UJmM">
+
+            <img src="https://img.youtube.com/vi/TxVCHo4UJmM/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/wWE1F8PltxY">
 
-        <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg">
+    <!-- YOUTUBE 6 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/_NFy89OH4x4">
+
+            <img src="https://img.youtube.com/vi/_NFy89OH4x4/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
 
-    <div class="video-thumbnail"
-         data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
 
-        <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg">
+    <!-- YOUTUBE 7 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/wWE1F8PltxY">
+
+            <img src="https://img.youtube.com/vi/wWE1F8PltxY/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
 
     </div>
+
+
+    <!-- YOUTUBE 8 -->
+
+    <div class="video-card">
+
+        <div class="video-thumbnail"
+             data-video="https://www.youtube.com/embed/hT5HdZ53oJQ">
+
+            <img src="https://img.youtube.com/vi/hT5HdZ53oJQ/hqdefault.jpg">
+
+        </div>
+
+        <div class="video-title">
+            TYTUŁ
+        </div>
+
+        <div class="video-description">
+            OPIS
+        </div>
+
+    </div>
+
 
 </section>
 
 </main>
+
 
 <div class="video-popup" id="videoPopup">
 
@@ -268,6 +437,7 @@ body {
     </iframe>
 
 </div>
+
 
 <script>
 
